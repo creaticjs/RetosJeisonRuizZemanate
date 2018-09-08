@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Juega Ahorcado BOOTCAMP</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="codigo.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+
+</head>
+<body>
+	<div class='cuerpo'>
+	<h1 class="">JUEGO AHORCADO BOOTCAMP PLATZI</h1>
+	
+	<div id="contenedor" >
+		<ul id="puestas">
+			
+		</ul>
+			<span id="ganadas">0</span>
+			<span id="perdidas">0</span>
+
+		
+		<canvas id='ahorcado' width = '500' height = '500' margin='33' >
+		
+		</canvas>	
+	</div>
+	<form id="formulario">
+		<input type='submit' id='btn' class='btn btn-primary'value='ENVIAR LETRA'/>
+		
+		<input type='text' id='letra' autocomplete="off" class='form-control' maxlength='1'/>
+		<label for="letra"  class="text-info" id="texto">Elige una letra</label>
+	</form>
+	
+
+
+
+</body>
+</html>

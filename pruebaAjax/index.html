@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prueba AJAX</title>
+</head>
+<body>
+
+<div id="renderAjax">
+
+</div>
+
+<script>
+
+function getRequestGit() {
+ var peticion = new XMLHttpRequest();
+ peticion.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 200) {
+ datos = this.responseText
+ document.getElementById("renderAjax").innerHTML = this.responseText;
+ }
+ };
+ peticion.open("GET", "https://api.github.com/users/carlosmolano", true);
+ peticion.send();
+ }
+
+
+</script>
+    
+</body>
+</html>

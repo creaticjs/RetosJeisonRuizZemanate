@@ -8,6 +8,11 @@
 </head>
 <body>
 
+        <div class="container">
+                <h1>Hola Ke ACE</h1>
+              
+        </div>
+
 <div id="renderAjax">
 
 </div>
@@ -18,7 +23,7 @@ function getRequestGit() {
  var peticion = new XMLHttpRequest();
  peticion.onreadystatechange = function() {
  if (this.readyState == 4 && this.status == 200) {
- datos = this.responseText
+ datos = JSON.parse(this.responseText)
  document.getElementById("renderAjax").innerHTML = this.responseText;
  }
  };

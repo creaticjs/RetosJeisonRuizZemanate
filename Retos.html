@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Futbol</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/iconoFutbol.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body style="height:1500px">
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Retos.html">Retos</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="Retos.html">Inicio</a></li>
+        <li><a href="EquiposFurbolFinal/index.html">Equipos de Futbol</a></li>
+        <li><a href="tablaPosiciones.html">Ahorcado</a></li>
+      </ul>
+    </div>
+  </nav>
+    
+  <div class="container" >
+        <div class="titulo">
+
+
+   
+                <center>  <h1> ⚽ Futbol Colombiano  🌎</h1> </center>
+             
+                <p> Escoge un Equipo de Futbol</p>
+             </div>
+             <div class="select1">
+                    <select name="sEquipos" id="equipos">
+                
+                        <option value="nacional">Nacional</option>
+                        <option value="america">America</option>
+                        <option value="millonarios">Millonarios</option>
+                        <option value="tolima">Tolima</option>
+                        <option value="medellin">Medellin</option>
+                        <option value="pasto">Pasto</option>
+                        <option value="popayan">Popayan</option>
+                    
+                
+                    </select>
+                </div>
+                
+    <div class="row">
+      <div class="col-md-6">
+            <div class="izquierda">
+            <h3> Nombre del Equipo :  </h3>
+            <center> <h2 id="nombre" ></h2> </center> 
+            
+        
+               <img id="imgEquipo" width="500" height="500" src="imagenes/colombia.png">
+        
+               
+                   <h3> 🌟 Estrellas  </h3> <p id="estrellitas"></p>
+            
+        
+               <h3> 🙇 Director Tecnico: </h3>
+               <p id="dt"></p>
+               <h3> ⚽⛹Jugadores </h3>
+               <p id="jugadores"></p>
+            </div>
+      </div>
+      <div class="col-md"> 
+            <div class="derecha">
+            <h3> 🏠 Estadio </h3>
+            <p id="estadio"></p>
+            
+            <img id="imgEstadio" width="500" height="500" src="imagenes/colombia.png">
+        </div>
+         </div>
+    </div>
+    <h1>Scroll this page to see the effect</h1>
+
+  </div>
+  
+ 
+  
+  <script src="equiposFutbol.js">
+    
+    </script>
+    
+  
+  </body>
+  </html>

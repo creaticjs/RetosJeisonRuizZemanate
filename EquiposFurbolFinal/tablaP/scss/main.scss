@@ -1,0 +1,55 @@
+@import 'mixins_and_variables.scss';
+@import 'normalize.scss';
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+html, body {
+  background: white;
+  font-family: Arial, sans-serif;
+  color: $black;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  padding: 0;
+  margin: 20px 0;
+  font-weight: bold;
+  color: $orange;
+  text-align: center;
+  font-size: 20px;
+  @include md-breakpoint {
+    font-size: 30px;
+    margin: 30px 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.fullname {
+  display: none;
+}
+@include lg-breakpoint {
+  .fullname {
+    display: inline-block;
+  }
+  .shortname {
+    display: none;
+  }
+}
+
+@import 'onboarding.scss';
+@import 'matches.scss';
+@import 'results.scss';

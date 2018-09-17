@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    
+        
+        var heroes = [
+
+            {
+            nombre: "Barman",
+            franquicia: "DC",
+            },
+
+            {
+            nombre: "Ironman",
+            franquicia: "Marvel",
+            },
+
+            {
+            nombre: "SuperBoy",
+            franquicia: "DC",
+            },
+
+            {
+            nombre: "Thor",
+            franquicia: "Marvel",
+            },
+
+            {
+            nombre: "Superman",
+            franquicia: "DC",
+            },
+        ]
+
+
+        var arrayHero = heroes.filter(function(herue) {
+            return herue.franquicia == "Marvel";
+        });
+
+    </script>
+    
+</body>
+</html>

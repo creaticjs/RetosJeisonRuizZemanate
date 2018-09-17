@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+      
+        <title>Calculadora de eliminatorias</title>
+        <link rel="shortcut icon" type="image/x-icon" href="imagenes/iconoFutbol.ico" type="image/x-icon"/>
+        
+        <link rel="stylesheet" href="./tablaP/public/main.min.css?v2" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        
+    </head>
+    <body background="imagenes/fondoEquipos.jpg">
+
+      
+  
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="index.html">Liga Aguila</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="categoriasFutbol.html">Categorias</a></li>
+              <li class="active"><a href="tablaPosiciones.html">Tabla de posiciones</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        
+
+      <div id="container" class="tablapos" >
+          <div class="row">
+              <div class="col-md-6">
+                   
+                    
+  
+
+        <div id="matches" >
+          <div id="matches-border" >
+            <h1>Tu pronóstico</h1>
+            <div id="date-selector">
+                <span class="selected" data-target="date-17">FECHA 17 / 5 OCT</span>
+                <span class="disabled" data-target="date-18">FECHA 18 / 10 OCT</span>
+            </div>
+            <div class="date-matches" id="date-17">
+                <div class="match">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name left"><b>
+                      <span class="fullname"> <p id="eq1"></p> </span>
+                      <span class="shortname">ARG</span>
+                    </b></span>
+                  </span>
+                  <img src="./tablaP/public/img/nacional.png">
+                  <input name="argentina" type="number" maxlength="1" max="9" class="n1">
+                  -
+                  <input name="peru" type="number" maxlength="1" class="n1">
+                  <img src="./tablaP/public/img/america.png">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name right">
+                      <span class="fullname"><p id="eq2"></p></span>
+                      <span class="shortname">PER</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="match">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name left">
+                      <span class="fullname"><p id="eq3"></p></span>
+                      <span class="shortname">BOL</span>
+                    </span>
+                  </span>
+                  <img src="./tablaP/public/img/millonarios.png">
+                  <input name="bolivia" type="number" maxlength="1" class="n1">
+                  -
+                  <input name="brasil" type="number" maxlength="1">
+                  <img src="./tablaP/public/img/tolima.png">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name right">
+                      <span class="fullname"><p id="eq4"></p></span>
+                      <span class="shortname">BRA</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="match">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name left">
+                      <span class="fullname"><p id="eq5"></p></span>
+                      <span class="shortname">CHL</span>
+                    </span>
+                  </span>
+                  <img src="./tablaP/public/img/medellin.png">
+                  <input name="chile" type="number" maxlength="1">
+                  -
+                  <input name="ecuador" type="number" maxlength="1">
+                  <img src="./tablaP/public/img/PASTO.png">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name right">
+                      <span class="fullname"><p id="eq6"></p></span>
+                      <span class="shortname">ECU</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="match">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name left">
+                      <span class="fullname"><p id="eq7"></p></span>
+                      <span class="shortname">COL</span>
+                    </span>
+                  </span>
+                  <img src="./tablaP/public/img/cali.png">
+                  <input name="colombia" type="number" maxlength="1">
+                  -
+                  <input name="paraguay" type="number" maxlength="1">
+                  <img src="./tablaP/public/img/Junior.png">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name right">
+                      <span class="fullname"><p id="eq8"></p></span>
+                      <span class="shortname">PRY</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="match">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name left">
+                      <span class="fullname"><p id="eq9"></p></span>
+                      <span class="shortname">VEN</span>
+                    </span>
+                  </span>
+                  <img src="./tablaP/public/img/equidad.png">
+                  <input name="venezuela" type="number" maxlength="1">
+                  -
+                  <input name="uruguay" type="number" maxlength="1">
+                  <img src="./tablaP/public/img/once.png">
+                  <span class="country-name-container">
+                    &nbsp;
+                    <span class="country-name right">
+                      <span class="fullname"><p id="eq10"></p></span>
+                      <span class="shortname">URU</span>
+                    </span>
+                  </span>
+                </div>
+            </div>
+            <div class="date-matches hidden" id="date-18">
+              <div class="match">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name left">
+                    <span class="fullname">ECUADOR</span>
+                    <span class="shortname">ECU</span>
+                  </span>
+                </span>
+                <img src="./tablaP/public/img/ecuador.svg">
+                <input name="ecuador" type="number" maxlength="1">
+                -
+                <input name="argentina" type="number" maxlength="1">
+                <img src="./tablaP/public/img/argentina.svg">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name right"><b>
+                    <span class="fullname">ARGENTINA</span>
+                    <span class="shortname">ARG</span>
+                  </b></span>
+                </span>
+              </div>
+              <div class="match">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name left">
+                    <span class="fullname"><p id="eq4"></p></span>
+                    <span class="shortname">BRA</span>
+                  </span>
+                </span>
+                <img src="./tablaP/public/img/brazil.svg">
+                <input name="brasil" type="number" maxlength="1">
+                -
+                <input name="chile" type="number" maxlength="1">
+                <img src="./tablaP/public/img/chile.svg">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name right">
+                    <span class="fullname">CHILE</span>
+                    <span class="shortname">CHL</span>
+                  </span>
+                </span>
+              </div>
+              <div class="match">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name left">
+                    <span class="fullname">PARAGUAY</span>
+                    <span class="shortname">PRY</span>
+                  </span>
+                </span>
+                <img src="./tablaP/public/img/paraguay.svg">
+                <input name="paraguay" type="number" maxlength="1">
+                -
+                <input name="venezuela" type="number" maxlength="1">
+                <img src="./tablaP/public/img/venezuela.svg">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name right">
+                    <span class="fullname">VENEZUELA</span>
+                    <span class="shortname">VEN</span>
+                  </span>
+                </span>
+              </div>
+              <div class="match">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name left">
+                    <span class="fullname">PERÚ</span>
+                    <span class="shortname">PER</span>
+                  </span>
+                </span>
+                <img src="./tablaP/public/img/peru.svg">
+                <input name="peru" type="number" maxlength="1">
+                -
+                <input name="colombia" type="number" maxlength="1">
+                <img src="./tablaP/public/img/colombia.svg">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name right">
+                    <span class="fullname">COLOMBIA</span>
+                    <span class="shortname">COL</span>
+                  </span>
+                </span>
+              </div>
+              <div class="match">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name left">
+                    <span class="fullname">URUGUAY</span>
+                    <span class="shortname">URU</span>
+                  </span>
+                </span>
+                <img src="./tablaP/public/img/uruguay.svg">
+                <input name="uruguay" type="number" maxlength="1">
+                -
+                <input name="bolivia" type="number" maxlength="1">
+                <img src="./tablaP/public/img/bolivia.svg">
+                <span class="country-name-container">
+                  &nbsp;
+                  <span class="country-name right">
+                    <span class="fullname">BOLIVIA</span>
+                    <span class="shortname">BOL</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      
+    </div>
+    <div class="col-md-6"> 
+          
+         
+        <div id="results" >
+          <div id="results-border">
+            <h2>Así queda la tabla</h2>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Equipos</th>
+                    <th>PTs</th>
+                    <th>PJ</th>
+                    <th>PG</th>
+                    <th>PE</th>
+                    <th>PP</th>
+                    <th>GF</th>
+                    <th>GC</th>
+                    <th>DG</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-name="brasil">
+                    <td>
+                      <span class="fullname"><p id="eq11"></p></span>
+                      <span class="shortname">TOL</span>
+                    </td>
+                    <td>37</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>38</td>
+                    <td>11</td>
+                    <td>27</td>
+                  </tr>
+                  <tr data-name="uruguay">
+                    <td>
+                      <span class="fullname"><p id="eq18"></p></span>
+                      <span class="shortname">URU</span>
+                    </td>
+                    <td>27</td>
+                    <td>16</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>28</td>
+                    <td>18</td>
+                    <td>10</td>
+                  </tr>
+                  <tr data-name="colombia">
+                    <td>
+                      <span class="fullname"><p id="eq17"></p></span>
+                      <span class="shortname">COL</span>
+                    </td>
+                    <td>26</td>
+                    <td>16</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>19</td>
+                    <td>16</td>
+                    <td>3</td>
+                  </tr>
+                  <tr data-name="peru">
+                    <td>
+                      <span class="fullname"><p id="eq12"></span>
+                      <span class="shortname">PER</span>
+                    </td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>26</td>
+                    <td>25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr class="main" data-name="argentina">
+                    <td>
+                      <span class="fullname"><p id="eq13"></span>
+                      <span class="shortname">ARG</span>
+                    </td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>16</td>
+                    <td>15</td>
+                    <td>1</td>
+                  </tr>
+                  <tr data-name="chile">
+                    <td>
+                      <span class="fullname"><p id="eq15"></span>
+                      <span class="shortname">CHL</span>
+                    </td>
+                    <td>23</td>
+                    <td>16</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>24</td>
+                    <td>23</td>
+                    <td>1</td>
+                  </tr>
+                  <tr data-name="paraguay">
+                    <td>
+                      <span class="fullname"><p id="eq20"></span>
+                      <span class="shortname">PRY</span>
+                    </td>
+                    <td>21</td>
+                    <td>16</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>17</td>
+                    <td>23</td>
+                    <td>-6</td>
+                  </tr>
+                  <tr data-name="ecuador">
+                    <td>
+                      <span class="fullname"><p id="eq16"></span>
+                      <span class="shortname">ECU</span>
+                    </td>
+                    <td>20</td>
+                    <td>16</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>0</td>
+                  </tr>
+                  <tr data-name="bolivia">
+                    <td>
+                      <span class="fullname"><p id="eq14"></span>
+                      <span class="shortname">BOL</span>
+                    </td>
+                    <td>13</td>
+                    <td>16</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>11</td>
+                    <td>14</td>
+                    <td>34</td>
+                    <td>-20</td>
+                  </tr>
+                  <tr data-name="venezuela">
+                    <td>
+                      <span class="fullname"><p id="eq19"></span>
+                      <span class="shortname">VEN</span>
+                    </td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>18</td>
+                    <td>35</td>
+                    <td>-17</td>
+                  </tr>
+                </tbody>
+            </table>
+            <div class="table-footer">
+              <span class="green">Clasificado</span>
+              <span class="yellow">Repechaje</span>
+              <span class="red">Eliminado</span>
+            </div>
+          </div>
+        </div>
+
+        
+      
+    </div>
+</div>
+      </div>
+      <div id="onboarding">
+        <div id="onboarding-container">
+          <div id="onboarding-text">
+            Colocar en cada espacio designado por país un número del 0 (cero)
+            al 9 (nueve). Cada resultado de partido arriesgado impactará según
+            corresponda en la tabla de posiciones
+            <div>
+              <span id="start-playing">Empezar a jugar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="./tablaP/public/main.min.js" type="text/javascript"></script>
+    
+      <script src="equipos.js">
+    
+        </script>
+        
+          
+      <script src="tabla.js">
+        
+        </script>
+    
+    </body>
+</html>

@@ -1,0 +1,22 @@
+$orange: #f98300;
+$black: #424242;
+$grey: #9e9e9e;
+$green: #3ab54b;
+$yellow: #fdee20;
+$red: #f69fa8;
+$light-blue: #e1f5fe;
+
+$md-breakpoint: 767px;
+$lg-breakpoint: 1140px;
+
+@mixin md-breakpoint {
+  @media (min-width: $md-breakpoint) {
+    @content;
+  }
+}
+
+@mixin lg-breakpoint {
+  @media (min-width: $lg-breakpoint) {
+    @content;
+  }
+}

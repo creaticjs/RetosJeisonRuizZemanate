@@ -1,0 +1,137 @@
+#matches {
+  display: inline-block;
+  width: 100%;
+  @include md-breakpoint {
+    width: 50%;
+  }
+
+  #matches-border {
+    border-bottom: solid 1px blue;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    &::after {
+      content: '';
+      display: inline-block;
+      border-bottom: solid 1px brown;
+      border-right: solid 1px brown;
+      background: white;
+      position: absolute;
+      $size: 20px;
+      width: $size;
+      height: $size;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-10px, 11px) rotate(45deg);
+    }
+    @include md-breakpoint {
+      border: solid 1px $orange;
+      border-radius: 4px;
+      margin: 10px;
+      &::after {
+        top: 40px;
+        left: 100%;
+        transform: translateX(-10px) rotate(-45deg);
+      }
+    }
+  }
+
+  #date-selector {
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: solid 1px $grey;
+    margin-bottom: 20px;
+    font-size: 12px;
+    @include md-breakpoint {
+      margin-bottom: 40px;
+      font-size: 16px;
+      height: 32px;
+    }
+    @include lg-breakpoint {
+      font-size: 18px;
+      height: 32px;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: bold;
+      border-bottom: solid 3px transparent;
+      transform: translateY(2px);
+      cursor: pointer;
+      padding: 0 10px 5px 10px;
+      @include md-breakpoint {
+        padding: 0 15px 10px 15px;
+      }
+      @include lg-breakpoint {
+        padding: 0 20px 10px 20px;
+      }
+
+      &.selected {
+        color: $orange;
+        cursor: default;
+        border-bottom-color:$orange;
+      }
+
+      &.disabled {
+        color: $grey;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .date-matches {
+    margin-bottom: 20px;
+    .match {
+      text-align: center;
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    .country-name-container {
+      display: inline-block;
+      overflow: visible;
+      position: relative;
+      .country-name {
+        position: absolute;
+        top: 0;
+        &.left {
+          right: 0;
+        }
+        &.right {
+          left: 0;
+        }
+      }
+    }
+
+    input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: solid 1px white;
+      outline: none;
+      text-align: center;
+      width: 40px;
+      font-size: 17px;
+      @include md-breakpoint {
+        width: 50px;
+        font-size: 20px;
+      }
+    }
+
+    img {
+      $sm-size: 30px;
+      $md-size: 40px;
+      width: $sm-size;
+      height: $sm-size;
+      vertical-align: middle;
+      margin: 0 5px;
+      @include md-breakpoint {
+        margin: 0 10px;
+        width: $md-size;
+        height: $md-size;
+      }
+    }
+  }
+}

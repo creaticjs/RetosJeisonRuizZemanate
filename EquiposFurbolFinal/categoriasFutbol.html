@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Futbol</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/iconoFutbol.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     
+  </head>
+  <body style="height:1500px">
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Liga Aguila</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html">Inicio</a></li>
+        <li class="active"><a href="categoriasFutbol.html">Categorias</a></li>
+        <li><a href="tablaPosiciones.html">Tabla de posiciones</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" >
+        <div class="titulo">
+
+                <center>  <h1> ⚽ Futbol Colombiano  🌎</h1> </center>
+                            
+             </div>
+
+             <button type="button" class="btn btn-primary btn-lg active" onclick="myFunction()">Crear EQUIPO</button>
+
+                      <div class="select1">
+
+                          <div class="titulo2">
+                          <p> Escoge una categoria del Futbol Colombiano</p>
+                          </div>
+                        <select name="sEquipos2" id="equiposCategoria">
+                    
+                            <option value="catB">Categoria A</option>
+                            <option value="catA">Categoria B</option>
+                    
+                    
+                        </select>
+                    </div>
+
+    <div  id="categoriasF" >  
+            <p>Conenido</p>
+        
+        <table class="tablacategorias" border="1px">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Estrellas</th>
+                    <th>Entrenador</th>
+                    <th>Jugadores</th>
+                    <th>Categoria</th>
+
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+    
+            </tbody>
+        </table>
+
+        <p id="categoriasObjeto"> asfsafa</p>
+    
+      </div>
+  </div>
+  
+ 
+  <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+       <div class="modal-content3">
+          <div class="modal-header">
+
+               <h3>Creación de un nuevo equipo de futbol</h3>
+      </div>
+          <div class="modal-body">
+           
+            <div class="titulo3">
+              <h3 class="H3"> ⚽⛹ Nuevo Equipo </h3>
+              <form id="formulario" >
+
+                  <label for="letra"  class="titulo3" id="texto"  >Nombre Equipo</label>
+                  
+                  <input type='text' id='letra' autocomplete="off" class='form-control'   placeholder="Escribe un nombre para el equipo"/>
+                  
+                  <label for="estrellasF"  class="titulo3" id="texto2">Estrellas</label>
+
+                  <input type='number' id='estrellasF' autocomplete="off" class='form-control'   placeholder="Escribe la cantidad de estrellas"/>
+                  
+                  <label for="estrellasF"  class="titulo3" id="texto3">Imagen Escudo Equipo</label>
+
+                  <input type="file" id='urlimageF'  class='form-control'/>
+
+                  <label for="estrellasF"  class="titulo3" id="texto3">Director Técnico</label>
+
+                  <input type='text' id='dtF' autocomplete="off" class='form-control'   placeholder="Escribe el nombre del DT"/>
+                 
+                  <label for="estrellasF"  class="titulo3" id="texto3">Jugadores</label>
+
+                  <input type='text' id='jugadoresF' autocomplete="off" class='form-control'   placeholder="Escribe los nombres de los jugadores"/>
+                 
+                  <label for="estrellasF"  class="titulo3" id="texto3">Imagen Estadio del Equipo</label>
+
+                  <input type="file" id='estadioF'  class='form-control'/>
+
+                  <label for="estrellasF"  class="titulo3" id="texto3">Categoria Equipo</label>
+
+                  <br><br>
+
+
+                  <input class="modal-footer"  type='submit' id='btn' class='btn btn-primary'value='Crear Equipo' />
+                  
+
+                </form>
+                         
+           
+            </div>
+
+
+
+      </div>
+          <div class="modal-footer">
+                
+         <a href="#" data-dismiss="modal" class="btn btn-danger">Cerrar</a>
+      </div>
+       </div>
+    </div>
+ </div>
+  
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+ 
+
+  <script src="equipos.js">
+    
+    </script>
+
+    
+  </body>
+  </html>
+  
+
+   

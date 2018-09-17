@@ -1,6 +1,6 @@
 #btn{
 	color: #ffffff;
-	background-color: #42ca9a;
+	background-color: #38b7ce;
 	border-color: #042441;
 	display: inline-block;
 	margin-bottom: 0;
@@ -17,4 +17,19 @@
 	border-radius: 10px;
 	vertical-align: middle;
 	
+}
+.container{
+	
+	margin-top: 30px;
+	
+}
+
+#card1{
+    background-color: #c7c9cc;
+}
+#perfilGit{
+    color: #ffffff;
+    text-align: center;
+    background-image: url("Img/fPerfil.jpg");
+  
 }

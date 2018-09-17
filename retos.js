@@ -10,6 +10,13 @@ function getRequestGit(){
             var imagen=document.getElementById('avatar');
             imagen.setAttribute('src',datosperfil.avatar_url)
             console.log(datosperfil);
+            document.getElementById('company').innerHTML = datosperfil.company
+            document.getElementById('location').innerHTML = datosperfil.location
+            document.getElementById('public_repos').innerHTML = datosperfil.public_repos
+            document.getElementById('followers').innerHTML = datosperfil.followers
+            document.getElementById('following').innerHTML = datosperfil.following
+            document.getElementById('fecha_de_creacion').innerHTML = datosperfil.created_at
+            document.getElementById('ultima_Actualizacion').innerHTML = datosperfil.updated_at
             renderRepositorios(datosperfil.repos_url);
         }
     }

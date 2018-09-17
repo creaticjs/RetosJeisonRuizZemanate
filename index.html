@@ -7,8 +7,11 @@
     <link rel="stylesheet" type="text/css" href="stylesRetos.css">
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <title>Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <title>Retos BootCamp Jeison</title>
     
 </head>
 <body>
@@ -27,15 +30,78 @@
             </div>
             <div class="col-md-6">
                   
-
-                    <a href="EquiposFurbolFinal/index.html" class="button" id="btn">Equipos Futbol</a>
-                    <a href="JuegoAhorcadoJavaScript/index.html" class="button" id="btn">Ahorcado</a>
+                    <div class="accordion" id="accordionExample">
+                            <div class="card">
+                              <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                   Equipos de Futbol Colombiano
+                                  </button>
+                                </h5>
+                              </div>
+                          
+                              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                        <h4>🤖💻Eureka! Technology</h4>
+                                        <h5> Equipos de Futbol - Liga Aguila</h5>
+                                        <p> Proyectos BootCamp Platzi CreaTIC</p>
+                                        <p>  Click en el boton para ver el proyecto equipos de futbol. </p>                                
+                                       
+                                 <a href="EquiposFurbolFinal/index.html" class="button" id="btn">Equipos Futbol</a>
+                    
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card">
+                              <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Juego Ahorcado JavaScript
+                                  </button>
+                                </h5>
+                              </div>
+                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                        <h4>🤖💻Eureka! Technology</h4>
+                                        <h5>Juego Ahorcado JavaScript</h5>
+                                        <p> Jueguito del ahorcado desarrollado en JavaScript....Dibujando en etiqueta Canvas.</p>
+                                        <p>  Click en el boton para ver el proyecto del Ahorcado en JavaScript </p>                                
+                                        <a href="JuegoAhorcadoJavaScript/index.html" class="button" id="btn">Ahorcado</a>
             
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card">
+                              <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Ajax y Api Github
+                                  </button>
+                                </h5>
+                              </div>
+                              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                        <h4>🤖💻Eureka! Technology</h4>
+                                        <h5>Prueba Ajax Github Retos</h5>
+                                        <p> Utilizando ajax y api de github para renderizar perfil</p>
+                                        <p>  Click en el boton para ver el proyecto Ajax y Github </p>                                
+                                        <a href="pruebaAjax/index.html" class="button" id="btn">Ajax y Gitub</a>
+            
+                                    </div>
+                              </div>
+                            </div>
+                          </div>
+                
+                
+                  
+
+                   
                 </div>
         </div>
        
     </div>
 
+    
     
     <script src="retos.js">
        

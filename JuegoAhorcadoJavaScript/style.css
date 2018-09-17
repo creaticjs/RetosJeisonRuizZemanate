@@ -10,8 +10,9 @@ body{
 .cuerpo{
 	height: 100%;
 	width: 1000px;
-	margin: 0 auto;
+	margin-top: 60px;
 	color: #ffffff;
+	text-align: center;
 }
 
 .twitter-share-button{

@@ -1,0 +1,157 @@
+body{
+	margin:0 auto;
+	font-family: "Helvetica Neue", "raleway";
+	font-size: 14px;
+	background-image: url("imagenes/fondoEquipos.jpg");
+}
+
+.navbar-header{
+
+	height: 80px;
+}
+
+
+.titulo{
+	height: 100%;
+	margin-top: 80px;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.titulo2{
+	height: 100%;
+	margin-top: 0px;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.titulo3{
+	height: 100%;
+	margin-top: 0px;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.botNuevoE{
+	height: 100%;
+	margin-top: 0px;
+	color: #000000;
+	font-size: 20px;
+
+}
+.izquierda{
+	height: 100%;
+	width: 500px;
+	margin: 30px;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.contenido{
+	height: 100%;
+	width: 500px;
+	margin: 10px;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.derecha{
+
+	color: #ffffff;
+	font-size: 20px;
+	
+}
+
+.select1{
+	height: 100%;
+	width: 300px;
+	margin: 10px;
+	color: #0f0f0f;
+	font-size: 20px;
+}
+
+.tablacategorias{
+	
+
+	
+	margin: 20px;
+	color: #ffffff;
+	font-size: 20px;
+	border: blue 5px solid;
+	padding: 15px;
+}
+
+#btn{
+	color: #ffffff;
+	background-color: #42ca9a;
+	border-color: #042441;
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid ;
+	white-space: nowrap;
+	padding: 6px 6px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 10px;
+	vertical-align: middle;
+	
+}
+
+form{
+
+	height: 100%;
+	width: 300px;
+
+}
+
+.modal-content3{
+    position: relative;
+    background-color: #009688;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+.H3{
+	text-align: center;
+}
+
+.form-control{
+	align-content: center;
+}
+
+.tablapos{
+	margin-top: 30px;
+}
+
+.tab1{
+	background-color: #009688;
+	height: 70px;
+	
+}
+
+.tab2{
+	background-color:  #e551f8;
+	height: 100%;
+	width: 100%;
+}
+
+
+.wrapper{
+	width: 400px;
+	height: 600px;
+	margin:20px auto;
+	text-align:center;
+	border:1px dashed grey;
+	overflow-y: scroll;
+  }
+	  

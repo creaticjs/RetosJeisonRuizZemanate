@@ -7,38 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-
     <h1>Callback 😎</h1>
-
     <script>
-        function getPeticion(url, render, callback){
+        function getPeticion(url,render, callback){
             var httpR = new XMLHttpRequest();
             httpR.onreadystatechange = function(){
-                if(this.readyState==4 && this.status==200){
-
+                if(this.readyState==4&& this.status==200){
                     renderP(JSON.parse(this.responseText));
                     if(callback){
                         callback();
                     }
                 }
-                
             }
-
-            httpR.open('GET', url , true);
+            httpR.open('GET',url,true);
             httpR.send();
         }
-
         function renderP(data){
-                console.log(data);
+            console.log(data);
         }
-
-       getPeticion('https://swapi.co/api/',renderP,function(){
         getPeticion('https://swapi.co/api/',renderP,function(){
-
+            getPeticion('https://swapi.co/api/',renderP,function(){
+            });
         });
-       });
-    
     </script>
-    
 </body>
 </html>

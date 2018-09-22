@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+       
+        //https://api.github.com/users/cfordonez
+        //https://api.github.com/users/jairnet
+        //https://api.github.com/users/hyronhide
+        //https://api.github.com/users/jasa1704
+        //https://api.github.com/users/fraboto
+        function getP(url){
+            return new Promise(function(resolve, reject){
+                var httpX = new XMLHttpRequest();
+                httpX.onload = function(){
+                    //console.log(this.responseText);
+                    resolve(JSON.parse(this.responseText));
+                }
+                httpX.onerror = function(){
+                    reject(Error('Error 🤮'));
+                }
+                httpX.open('GET',url,true);
+                httpX.send()
+            });
+        }
+        
+        var usuarios = []; //promesas 
+        var urls= ['https://api.github.com/users/carlosmolano',
+                'https://api.github.com/users/jairnet',
+                'https://api.github.com/users/hyronhide',
+                'https://api.github.com/users/jasa1704'];
+                
+        urls.forEach(function(url){
+           usuarios.push( getP(url) ); 
+        });
+        //usuarios.then()
+        Promise.all(usuarios)
+        .then(function(data){
+            console.log(data);
+        })
+    </script>
+</body>
+</html>

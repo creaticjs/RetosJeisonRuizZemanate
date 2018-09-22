@@ -30,33 +30,47 @@
         $(function(){
            //$('#saludo').click(saludito);
            //$('#saludo').on('click',function(){
-               
+               peticion('https://api.github.com/users/carlosmolano')
+               .then(function(data){
+                   console.log(data);
+
+               })
+               .catch(function(err){
+                console.log(err);
+               })
            
         });
 
-        function peticion(){
+        function peticion(url,param){
 
-            $('#loading').show();
-           $.ajax({
+
+            return new Promise(function (resolve,reject) {  
+
+
+                   $.ajax({
                type: "get",
-               url: "https://api.github.com/users/carlosmolano",
+               url: url,
+               data:param,
                dataType: "json",
            }) 
            .done(function (data) {
-            console.log('DONE');
-               console.log(data);
-               user=data;
+          resolve(data);
              })
 
         .fail(function(){
 
-       console.log('Errorcito ');
+       reject("ERROR 🎇")
         })      
 
         .always(function(){
-            console.log('Always');
-            $('#loading').hide();
+            console.log('Always')
         });
+
+
+            });
+
+         //   $('#loading').show();
+        
 
         }
     

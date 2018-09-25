@@ -36,7 +36,8 @@ wrapper.scroll(function(){
         var urls= ['https://swapi.co/api/vehicles/',
                 'https://swapi.co/api/starships/',
                 'https://swapi.co/api/films',
-                'https://swapi.co/api/species/'];
+                'https://swapi.co/api/species/',
+                'https://swapi.co/api/people/'];
                 
         urls.forEach(function(url){
            usuarios.push( getP(url) ); 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="stylePlanetas.css">
     <title>Document</title>
     <style>
         #contenedor {
@@ -23,14 +24,14 @@
 <body>
     <h1>jQuery </h1>
     <img id="loading" style="display: none;" src="loading.gif">
-    <img src="http://d26lpennugtm8s.cloudfront.net/stores/230/004/products/611182-mla27512518606_062018-o-470d0367699816062815294264979305-640-0.jpg" alt="" srcset="">
+    <img src="http://www.pngmart.com/files/4/Galaxy-PNG-Transparent-Image.png" height="1080"  alt="" srcset="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         console.log('Inicio');
         $(function(){
            //$('#saludo').click(saludito);
            //$('#saludo').on('click',function(){
-               peticion('https://api/v2/evolution-chain/')
+               peticion('http://www.asterank.com/api/kepler?query={%22KOI%22:{%22$lt%22:50,%22$gt%22:20}}&limit=100')
                .then(function(data){
                    console.log(data);
 

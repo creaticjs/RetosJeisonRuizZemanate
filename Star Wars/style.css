@@ -133,6 +133,14 @@ img {
   margin: auto;
   
 }
+
+#img3{
+  height: 280px;
+  width: 190px;
+  display: block;
+  margin: auto;
+  
+}
 .star, .wars, .byline {
   position: absolute;
 }
@@ -248,3 +256,30 @@ left:0px;
 
 }
 
+.vindex{
+
+  height:100%;
+  width:50%;
+  top:0px;
+  left:0px;
+  
+  }
+
+  .container2{
+
+    height:100%;
+    width:50%;
+    top:0px;
+    left:0px;
+    
+    }
+
+    .delimitador2{
+      width:100%;
+      margin:auto;
+      }
+
+      .delimitadorv{
+        width:60%;
+        margin:auto;
+        }

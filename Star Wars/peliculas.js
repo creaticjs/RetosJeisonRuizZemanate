@@ -19,7 +19,6 @@ wrapper.scroll(function(){
 });
 */
 
-/// 
 console.log('Inicio');
 
 $(function(){

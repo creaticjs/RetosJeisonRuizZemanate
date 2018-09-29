@@ -28,6 +28,8 @@ $(function(){
 
         $("#nomP").text(`${tp}`);
         $("#imaP").text(`${imgp}`);
+        $("#mi_imagen").attr("src","https://bit.ly/2zE0d57");
+
 
         $("#tituloP").text(`Has Click en El boton ▶ para ver la PELICULA: ${tp} 🎬 `);
         console.log(xx);

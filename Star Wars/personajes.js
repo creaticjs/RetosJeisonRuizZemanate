@@ -33,7 +33,7 @@ $(function(){
 
         $("#tituloP").text(`Has Click en El boton ▶ para ver la PELICULA: ${tp} 🎬 `);
         console.log(xx);
-
+        
         switch (xx) {
             case "0":
             peli = linkPeliculas[xx];

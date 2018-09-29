@@ -4,6 +4,9 @@ console.log('Inicio');
 
 $(function(){
         
+
+
+
    $('#cuerpoTabla').on('click', 'tr',function(){
     var peli="";
     var linkPeliculas=['https://www.rapidvideo.com/e/FMZDSIVUWN?c1_file=http://ver-pelis.me/subti/anuncio.srt&c1_label=Ver%20Pelis'
@@ -20,8 +23,11 @@ $(function(){
        
         var tp=$(this).closest('tr').children()[0].textContent;
         var xx=$(this).closest('tr').children()[5].textContent;
+        var imgp=$(this).closest('tr').children()[4].textContent;
+        
 
         $("#nomP").text(`${tp}`);
+        $("#imaP").text(`${imgp}`);
 
         $("#tituloP").text(`Has Click en El boton ▶ para ver la PELICULA: ${tp} 🎬 `);
         console.log(xx);
@@ -91,15 +97,14 @@ $(function(){
           
              
                 })
-           cTable.innerHTML = auxT;
+           cTable.innerHTML = auxT;     
+           
+           var imagpers = document.getElementById('imagenPM');
+           var auxT2 = "";
 
-           var imagP = document.getElementById('imaP');
-           var auxTp = `<img id="img3" src='${x}'  align="center" />`;
-           imagP.innerHTML = auxTp;
-           
-         
-         
-           
+         auxT2=`ASDASDAAAAAAAAAA`;
+
+         imagpers.innerHTML = auxT2;   
 
           
 
@@ -147,7 +152,11 @@ reject("ERROR 🎇")
 }
 
 
-
+function image() {
+    var img = document.createElement("IMG");
+    img.src = "/images/img1.gif";
+    $('#image').html(img); 
+}
  
 
         

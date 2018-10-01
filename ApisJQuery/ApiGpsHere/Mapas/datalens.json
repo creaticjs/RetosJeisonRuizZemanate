@@ -1,0 +1,6 @@
+{
+  "app_id": "DemoAppId01082013GAL",
+  "app_code": "AJKnXv84fjrb0KIHawS0Tg",
+  "host": "cit.datalens.api.here.com",
+  "tollExtUrl": "https://tce.cit.api.here.com/2/calculateroute.json"
+}

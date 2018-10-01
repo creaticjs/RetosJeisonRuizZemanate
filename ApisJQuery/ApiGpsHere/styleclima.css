@@ -1,0 +1,38 @@
+body{
+	margin:0 auto;
+	font-family: "Helvetica Neue", "raleway";
+  font-size: 14px;
+ 
+	background-image: url("imagenes/fondoEquipos.jpg");
+}
+
+.navbar-header{
+
+	height: 50px;
+}
+
+.navbar-brand{
+	height: 100px;
+	width: 100px;
+}
+
+/* General styles and layout */
+body {
+  background: #000 url("Imagenes/fondo2.jpg");
+}
+
+#img4{
+width: 50px;
+margin-top: 0;
+}
+
+#container2 {
+    display: flex; /* or inline-flex */
+  
+ 
+  }
+
+.cardClima{
+    width: 60%;
+    height: 100%;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sfsf</h1>
+
+    <script>
+    const https = require('https');
+const _ = require('lodash');
+
+/**
+ * Builds a GET request for the Geofencing Extension using pre-defined adminstrative area layers.
+ * This request tests a location for the administrative areas (cities, counties, countries, and others)
+ * it is within.
+ * 
+ * location  The location to test for
+ */
+function buildGfeWithPdeLayersRequestOptions(location) {
+  var requestParams = _({
+              // The ADMIN_POLY_X layers are layers that contain shapes of administrative areas.  These layers are defined in the Platform Data Extension
+              'layer_ids': 'ADMIN_POLY_0,ADMIN_POLY_1,ADMIN_POLY_2,ADMIN_POLY_8,ADMIN_POLY_9',
+              // The key_attributes are the attributes for each layer which uniquely identify an entry in this layer.  For the ADMIN_POLY_X layers, these are always ADMIN_PLACE_ID
+              'key_attributes': 'ADMIN_PLACE_ID,ADMIN_PLACE_ID,ADMIN_PLACE_ID,ADMIN_PLACE_ID,ADMIN_PLACE_ID',
+              'proximity': location.lat + ',' + location.lon,
+              'app_id': "3SLTlzLjpUjIAssqyDmi ",
+              'app_code': "HP2Z0U8o4pljWZctTWQYCg" 
+            }).map((value, key) => {
+              return key + '=' + encodeURIComponent(value);
+            }).join('&');
+  return {
+    method: 'GET',
+    hostname: 'maps.gfe.cit.api.here.com',
+    path: ['/1/search/proximity.json', requestParams].join('?')
+  };
+}
+
+/**
+ * Calls the Geofencing Extension API to find administrative areas a location is within.
+ * See buildGfeWithPdeLayersRequestOptions for an explanation of the parameters.
+ */
+function findAdminAreasForLocation(location) {
+  return new Promise((fulfill, reject) => {
+    var options = buildGfeWithPdeLayersRequestOptions(location);
+    var areas = [];
+    var req = https.request(options, (res) => {
+      var data = "";
+      res.on('data', (d) => {
+        data += d;
+      });
+      res.on('end', () => {
+        if(res.statusCode >= 400) {
+          reject(new Error(data));
+        }
+        else
+        {
+          var json = JSON.parse(data);
+          var geometries = json['geometries'];
+          if(geometries) {
+            areas = geometries.filter((geometry) => {
+              return geometry.distance <= 0;
+            }).map((geometry) => {
+              return {name: geometry.attributes.NAME, admin_layer: geometry.attributes.ADMIN_ORDER, admin_place_id: geometry.attributes.ADMIN_PLACE_ID, geometry: geometry.geometry};
+            });
+          }
+          fulfill(areas);
+        }
+      })
+    });
+    req.on('error', (err) => {
+      reject(err);
+    });
+
+    req.end();
+  });
+}
+
+// Coordinates for downtown Berkeley, CA
+var downtownBerkeley = { lat: 37.870242, lon: -122.268234 };
+
+findAdminAreasForLocation(downtownBerkeley)
+  .then(console.log)
+  .catch(console.error);
+/** Output:
+ [  { name: 'United States',
+    admin_layer: 'ADMIN_POLY_0',
+    admin_place_id: '21000001',
+    geometry: 'MULTIPOLYGON(((-0122.34375 37.26563,-0122.34375 37.96875,-0121.64062 37.96875,-0121.64062 
+        37.26563,-0122.34375 37.26563)))' },
+  { name: 'California',
+    admin_layer: 'ADMIN_POLY_1',
+    admin_place_id: '21009408',
+    geometry: 'MULTIPOLYGON(((-0122.34375 37.26563,-0122.34375 37.96876,-0121.64062 37.96876,-0121.64062 
+        37.26564,-0122.34375 37.26563)))' },
+  { name: 'Alameda',
+    admin_layer: 'ADMIN_POLY_8',
+    admin_place_id: '21009409',
+    geometry: 'MULTIPOLYGON(((-0122.25586 37.79297,-122.33529 37.79297, ... ,-0122.25586 
+        37.79297)))' },
+  { name: 'Berkeley',
+    admin_layer: 'ADMIN_POLY_9',
+    admin_place_id: '21009414',
+    geometry: 'MULTIPOLYGON(((-0122.29148 37.88086,-0122.25586 37.88086, ... ,-0122.29148 
+        37.88086)))' } ]
+ */
+    
+    </script>
+</body>
+</html>

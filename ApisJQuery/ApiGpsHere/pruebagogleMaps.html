@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Geolocalizacion</title>
+	<style>
+		#map{
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="comenzar()">Mostrar ubicación</button>
+	<div id="ubicacion"></div>
+   
+<script>
+    function comenzar()
+    {
+
+      navigator.geolocation.getCurrentPosition(mostrar_posicion);
+
+    }
+
+    function mostrar_posicion(posicion){
+
+var ubicacion= document.getElementById("ubicacion");
+
+
+var miubicacion ="";
+miubicacion +="Latitud: " + posicion.coords.latitude + "<br>";
+miubicacion +="Longitud: " + posicion.coords.longitude + "<br>";
+miubicacion +="Exactitud: " + posicion.coords.accuracy + "<br>";
+   
+ubicacion.innerHTML = miubicacion;
+
+}
+		
+	</script>
+</body>
+</html>

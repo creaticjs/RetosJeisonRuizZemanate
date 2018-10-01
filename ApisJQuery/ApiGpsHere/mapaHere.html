@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.visible.js"></script>
+
+
+    <title>Document</title>
+    <style>
+        #contenedor {
+            background-color: blue;
+            color: aliceblue;
+        }
+        .colorn {
+            background-color: red;
+            color: white;
+        }
+        .colornormal {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                          <img id="img4" src="Imagenes/eurekLogo.png"  alt="">
+                      </a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                      <li ><a href="index.html">Inicio</a></li>
+                      <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="peliculas.html">Explorar Mapas<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li class="active"><a href="mapaHere.html">Mapa Here</a></li>
+                          <li><a href="mapasGoogle.html">Mapa Google</a></li>
+              
+                        </ul>
+                      </li>
+                      <li><a href="climaHere.html">Clima</a></li>
+                      <li><a href="especies.html">Especies</a></li>
+                      <li><a href="vehiculos.html">Vehiculos</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
+                      <li><a href="Login/index.html"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesion</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+
+   
+    <img id="loading" style="display: none;" src="loading.gif">
+  
+
+
+    <div id="mapHere" align="center">
+      <iframe src="https://share.here.com/"  
+marginwidth="0" marginheight="0" name="ventana_iframe" scrolling="no" border="0"  
+frameborder="0" width="100%" height="600px"> 
+</iframe> 
+
+    </div>
+
+
+  <script src="mapaHere.js">
+   
+    </script>
+</body>
+</html> 

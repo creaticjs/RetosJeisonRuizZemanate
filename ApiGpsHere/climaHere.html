@@ -66,7 +66,7 @@
                     <ul class="nav navbar-nav">
                       <li ><a href="index.html">Inicio</a></li>
                       <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="peliculas.html">Explorar Mapas<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="mapaHere.html">Explorar Mapas<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                           <li class="active"><a href="mapaHere.html">Mapa Here</a></li>
                           <li><a href="mapasGoogle.html">Mapa Google</a></li>
@@ -74,7 +74,7 @@
                         </ul>
                       </li>
                       <li><a href="climaHere.html">Clima</a></li>
-                      <li><a href="especies.html">Especies</a></li>
+                      <li><a href="MapaGeocode.html">Geocodificación</a></li>
                       <li><a href="vehiculos.html">Vehiculos</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -94,11 +94,11 @@
             <div class="col s12">Selecciona una ciudad para ver el pronostico del Clima: 
 
               <div class="imagSelect">
-                  <select class="icons">
+                  <select class="icons" id= "selCiudad" >
                       <option value="" disabled selected>Escoge una Ciudad</option>
-                      <option value="" data-icon="Imagenes/Popayan.jpg">Ciudad 1</option>
-                      <option value="" data-icon="images/office.jpg">Ciudad 2</option>
-                      <option value="" data-icon="images/yuna.jpg">Ciudad 3</option>
+                      <option value="popayan" data-icon="Imagenes/Popayan.jpg" id="">Popayán</option>
+                      <option value="cali" data-icon="images/office.jpg">Cali</option>
+                      <option value="medellin" data-icon="images/yuna.jpg">Medellin</option>
                     </select>
 
               </div>

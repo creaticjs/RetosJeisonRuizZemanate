@@ -12,6 +12,17 @@ $(function(){
         indicators: true
       });
 
+      
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
 
    //$('#saludo').click(saludito);
    //$('#saludo').on('click',function(){

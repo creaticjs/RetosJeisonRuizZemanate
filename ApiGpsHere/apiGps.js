@@ -28,3 +28,6 @@ for(i=0;i<bylineArr.length;i++){									// Loop for every letter
   	byline.appendChild(span); 					// Add the span to the h2
   }
 }
+
+
+ 

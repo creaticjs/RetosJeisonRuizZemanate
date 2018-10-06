@@ -94,31 +94,54 @@
             <div class="col s12">Selecciona una ciudad para ver el pronostico del Clima: 
 
               <div class="imagSelect">
-                  <select class="icons" id= "selCiudad" >
-                      <option value="" disabled selected>Escoge una Ciudad</option>
-                      <option value="popayan" data-icon="Imagenes/Popayan.jpg" id="">Popayán</option>
-                      <option value="cali" data-icon="images/office.jpg">Cali</option>
-                      <option value="medellin" data-icon="images/yuna.jpg">Medellin</option>
-                    </select>
+                <select class="icons" id= "selCiudad" >
+                    <option value="" disabled selected>Escoge una Ciudad</option>
+                    <option value="popayan" data-icon="Imagenes/Popayan.jpg" id="">Popayán</option>
+                    <option value="cali" data-icon="Imagenes/cali.jpeg">Cali</option>
+                    <option value="medellin" data-icon="Imagenes/medellin.jpg">Medellín</option>
+                    <option value="bogota" data-icon="Imagenes/bogota.jpg">Bogotá</option>
+                    <option value="cartagena" data-icon="Imagenes/cartagena.jpg">Cartagena</option>
+                  </select>
 
-              </div>
-                
-                <div class="cardClima">
+            </div>
 
-                    <div class="card cardClima">
-                        <div class="card-image waves-effect waves-block waves-light">
-                          <img class="activator" src="Imagenes/Popayan.jpg">
-                        </div>
-                        <div class="card-content">
-                          <span id="ciudad" class="card-title activator grey-text text-darken-4">Ciudad<i class="material-icons right">more_vert</i></span>
-                          <p><a href="#">This is a link</a></p>
-                        </div>
-                        <div class="card-reveal">
-                          <span id="ciudad2" class="card-title grey-text text-darken-4">Ciudad<i class="material-icons right">close</i></span>
-                          <p id="ciudad3" >Informacion Climatologica de la Ciudad Selecionada.</p>
-                        </div>
-                      </div>
+
+            <div class="contEfecto">
+
+              <div class="containerEF">
+                <div class="frontEF sideEF">
+                  <div class="contentEF">
+                    <h1>Hakkam Abdullah</h1>
+
+                    <img id="imgCardCiudad" class="activator" width="100%" height= "100%" src="">
+               
+                    <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
+                    </p>
+
+                    
+
+
+                  </div>
                 </div>
+                <div class="backEF sideEF">
+                  <div class="contentEF">
+                    <h1>Contact Me</h1>
+                    <form class="formEF" >
+                      <label>Your Name :</label>
+                      <input type="text" placeholder="Omar Khattab">
+                      <label>Your E-mail :</label>
+                      <input type="text"S placeholder="Example@mail.com">
+                      <label>Your message :</label>
+                      <textarea placeholder="The Subject"></textarea>
+                      <input type="submit" value="Done">
+                    </form>
+                  </div>
+                </div>
+              
+              </div>
+
+              
+            </div>
                 
 
             </div>
@@ -167,14 +190,48 @@
 
             </div>
             
-            <div class="col s6">6-columns (one-half)</div>
+            <div class="col s6">6-columns (one-half)
+
+             
+              
+              <div class="cardClima" id="infoCard">
+                  
+
+                <div class="card cardClima"> 
+                  <div class="card-image waves-effect waves-block waves-light">
+                
+                  </div>
+                 <div class="card-content">
+                 <span id="ciudad" class="card-title activator grey-text text-darken-4">Ciudad<i class="material-icons right">more_vert</i></span>
+                 <p><a href="#">Ver más información</a></p>
+                 </div>
+                 <div class="card-reveal">
+                 <span id="ciudad2" class="card-title grey-text text-darken-4">Ciudad<i class="material-icons right">close</i></span>
+                 <p id="ciudad3" >Informacion Climatologica de la Ciudad Selecionada.</p> 
+                 
+                
+   
+                 </div>
+                 </div>
+
+              </div>
+              
+            </div>
           </div>
     
     </div>
 
     
 
-    
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large red">
+        <i class="large material-icons">face</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a  href="Login/index.html" class="btn-floating blue"><i class="material-icons">how_to_reg</i></a></li>
+      </ul>
+    </div>
             
 
   <script src="climaHere.js">

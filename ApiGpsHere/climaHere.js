@@ -1,5 +1,9 @@
 console.log('Inicio');
 $(function(){
+ var imgcard="";
+ var infocard= document.getElementById('infoCard');
+ var infoCard="";
+  //carrusel 
     var instance = M.Carousel.init({
         fullWidth: true,
         indicators: true
@@ -18,26 +22,46 @@ $(function(){
     var instances = M.FormSelect.init(elems, options);
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'right'
+    });
+  });
+       
+
+
+  $(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+  });
+
   // Or with jQuery
 
   $(document).ready(function(){
     $('select').formSelect();
+
+    
+
   });
 
-  /////
+
+
+  ////// selec ciudad para pronostico clima
   var selCiudad = document.getElementById("selCiudad");
 
-  selCiudad.onchange = function ()
+   selCiudad.onchange = function ()
   {
    //document.getElementById("nombre").innerHTML = this.value;
   //console.log();
-  var nomCiudad=this.options[this.selectedIndex].text;
+  var nomCiudad=this.options[this.selectedIndex].text;  // obtengo el nombre de la ciudad del objeto ontenido en la peticion ajax
   
-  console.log(nomCiudad); 
+  console.log(nomCiudad);  
 
-  var nomCSelec=nomCiudad.toLowerCase();;
+  var nomCSelec=nomCiudad.toLowerCase();; // pasar a minusculas
+  
   console.log(nomCSelec); 
-
+  
+  ////////para limpiar la cadena de caracteres especiales y tildes
   function getCleanedString(cadena){
     // Definimos los caracteres que queremos eliminar
     var specialChars = "!@#$^&%*()+=-[]\/{}|:<>?,.";
@@ -62,47 +86,72 @@ $(function(){
     cadena = cadena.replace(/ñ/gi,"n");
     return cadena;
  }
+////
 
-
- nomCSelec = getCleanedString(nomCSelec);
+//
+ nomCSelec = getCleanedString(nomCSelec); // funcion de limpiar cadena de texto
  console.log(nomCSelec); 
+
+ //pregunto si es determinada ciudad
 
   if(nomCSelec =="popayan")
   {
+    latCiudad= 2.433;
+    longCiudad= -76.617;
+    imgcard= "Imagenes/Popayan.jpg";
+    
+  }
 
-    peticion('https://weather.cit.api.here.com/weather/1.0/report.json')
-    .then(function(data){
-        console.log(data);
+  if(nomCSelec =="cali")
+  {
 
-        var ciudad= document.getElementById('ciudad');
-        var ciudad2= document.getElementById('ciudad2');
-        var ciudad3= document.getElementById('ciudad3');
+    latCiudad= 3.43722;
+    longCiudad= -76.5225;
+    imgcard= "Imagenes/cali.jpeg";
+   
+  }
 
-        var climita= data.observations.location[0];
-        console.log(climita);
+  if(nomCSelec =="medellin")
+  {
+    latCiudad= 6.268844;
+    longCiudad= -75.6664322;
+    imgcard= "Imagenes/medellin.jpg";
+  
+ 
+  }
 
-        var auxC = "";
-        var auxC2 = "";
-        var auxC3 = "";
-        auxC += climita.city+"<i class='material-icons right '> more_vert</i> </span>";
-        auxC2 += climita.city+"<i class='material-icons right'>close</i></span>";
-        
-        auxC3 += "<br> Pais: "+climita.country+"<br>Distancia: "+climita.distance+"<br>Latitud: "+climita.latitude+"<br>Longitud: "+climita.longitude+"<br>Departamento: "
-        +climita.state +"<br>Zona Horaria: "+climita.timezone+"<br>";
-       
-     
-       ciudad.innerHTML =  auxC ;
-       ciudad2.innerHTML =  auxC2 ;
-       ciudad3.innerHTML =  auxC3 ;
+  if(nomCSelec =="bogota")
+  {
+    latCiudad= 4.6097102;
+    longCiudad= -74.081749;
+    imgcard= "Imagenes/bogota.jpg";
+   
+  }
 
-    })
-    .catch(function(err){
-     console.log(err);
-    })
+  if(nomCSelec =="cartagena")
+  {
+    latCiudad= 10.3997200;
+    longCiudad= -75.5144400;
+    imgcard= "Imagenes/cartagena.jpg";
+    
+ 
+  }
+
+ 
+  peticionPromesaUrl(latCiudad,longCiudad,imgcard); 
 
   
+//contenido card html img
+    $("#imgCardCiudad").attr("src",imgcard); 
 
-  }
+  
+  console.log(imgcard);
+}
+
+if(selCiudad.value=="")
+{
+  $("#imgCardCiudad").attr("src","Imagenes/LocalizacionEurekaHere.png"); 
+ 
 }
 
 
@@ -113,9 +162,43 @@ $(function(){
       
 });
 
+function peticionPromesaUrl(latCiudad,longCiudad){
 
+  peticion('https://weather.cit.api.here.com/weather/1.0/report.json',latCiudad,longCiudad) //URL PARA API CLIMA
+  .then(function(data){
+      console.log(data);
 
-function peticion(url,param){
+      var ciudad= document.getElementById('ciudad');
+      var ciudad2= document.getElementById('ciudad2');
+      var ciudad3= document.getElementById('ciudad3');
+    
+      var climita= data.observations.location[0];
+      console.log(climita);
+    
+      var auxC = "";
+      var auxC2 = "";
+      var auxC3 = "";
+      auxC += climita.city+"<i class='material-icons right '> more_vert</i> </span>";
+      auxC2 += climita.city+"<i class='material-icons right'>close</i></span>";
+      
+      auxC3 += "<br> Pais: "+climita.country+"<br>Distancia: "+climita.distance+"<br>Latitud: "+climita.latitude+"<br>Longitud: "+climita.longitude+"<br>Departamento: "
+      +climita.state +"<br>Zona Horaria: "+climita.timezone+"<br>";
+     
+   
+     ciudad.innerHTML =  auxC ;
+     ciudad2.innerHTML =  auxC2 ;
+     ciudad3.innerHTML =  auxC3 ;
+
+     
+
+  })
+  .catch(function(err){
+   console.log(err);
+  })
+
+}
+
+function peticion(url,latCiudad,longCiudad,param){
 
 
     return new Promise(function (resolve,reject) {  
@@ -127,8 +210,8 @@ function peticion(url,param){
             jsonp: 'jsonpcallback',
             data: {
               product: 'observation',
-              latitude: ' 2.433',
-              longitude: '-76.617',
+              latitude:`${latCiudad}`,
+              longitude: `${longCiudad}`,
               oneobservation: 'true',
               app_id: '3SLTlzLjpUjIAssqyDmi',
               app_code: 'HP2Z0U8o4pljWZctTWQYCg'

@@ -1,21 +1,20 @@
  var basedeDatos
   var datosFirebase;
-  // Initialize Firebase
+// Initialize Firebase
 var config = {
- apiKey: "AIzaSyAJuk6713qP9OF4owHVYRYOMYKJcQb_QKQ",
- authDomain: "gpsnode-erueka.firebaseapp.com",
- databaseURL: "https://gpsnode-erueka.firebaseio.com",
- projectId: "gpsnode-erueka",
- storageBucket: "gpsnode-erueka.appspot.com",
- messagingSenderId: "252376198761"
-};
-
-firebase.initializeApp(config);
+    apiKey: "AIzaSyAJuk6713qP9OF4owHVYRYOMYKJcQb_QKQ",
+    authDomain: "gpsnode-erueka.firebaseapp.com",
+    databaseURL: "https://gpsnode-erueka.firebaseio.com",
+    projectId: "gpsnode-erueka",
+    storageBucket: "gpsnode-erueka.appspot.com",
+    messagingSenderId: "252376198761"
+  };
+  firebase.initializeApp(config);
 
  basedeDatos = firebase.database();
  var ref =  basedeDatos.ref("EurekaTechnology");
 
-ref.orderByChild("tipo").on("child_added", function(snapshot){
+ref.limitToFirst(2).on("child_changed", function(snapshot){
 //repite el proceso como cuantas referencias encuentre y los asigna a la lista "d"
      
   var d = snapshot.val();     
@@ -26,12 +25,15 @@ ref.orderByChild("tipo").on("child_added", function(snapshot){
  console.log("Firebase: ");
 console.log(datosFirebase);
 console.log("Latitud: ");
-console.log(datosFirebase.data[0]);
+console.log(datosFirebase[0]);
 console.log("Longitud: ");
-console.log(datosFirebase.data[1]);
+console.log(datosFirebase[1]);
 
 
 (function () {
+
+    console.log("Ejecutando Mapaaa HERE ");
+
     'use strict';
     
     var app_id = "3SLTlzLjpUjIAssqyDmi";
@@ -84,20 +86,23 @@ console.log(datosFirebase.data[1]);
     ui.removeControl('mapsettings');
     
     const startPoint = {
-        lat: datosFirebase.data[0],
-        lon:  datosFirebase.data[1]
+        lat: datosFirebase[0],
+        lon:  datosFirebase[1]
+      
+        
     };
     const endPoint = {
-        lat: datosFirebase.data[0],
-        lon: datosFirebase.data[1]
+        lat: datosFirebase[0],
+        lon: datosFirebase[1]
     };
-    
+
     //set map bounds
     map.setViewBounds(new H.geo.Rect(
         endPoint.lat, endPoint.lon,
         startPoint.lat, startPoint.lon
+       
     ), false);
-    
+    console.log("PUNTOOOS ");
     const routingService = platform.getRoutingService();
     let cheapestRouteProvider = null;
     let fastestRouteProvider = null;
